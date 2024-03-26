@@ -1,216 +1,414 @@
+/* Base styles for the entire body of the page */
 body {
     margin: 0;
     padding: 0;
+    /* Specifies the font family with a fallback to serif */
     font-family: 'Poppins', serif;
+    /* Adds a background image to the body */
     background-image: url('concrete_seamless.png');
+    /* Fallback background color if the image is not available */
     background-color: #f1f1f1;
+    /* Sets a base font size for the document */
     font-size: 1rem;
   }
 
+  /* Styles for the header section of the page */
   header {
+    /* Uses flexbox for layout */
     display: flex;
+    /* Stacks flex items vertically */
     flex-direction: column;
+    /* Spaces out the child elements */
     justify-content: space-between;
+    /* Centers child elements horizontally */
     align-items: center;
+    /* No padding for the header */
     padding: 0;
+    /* No margin for the header */
     margin: 0;
   }
 
+  /* Styles for the navigation bar */
   nav {
+    /* Uses flexbox for layout */
     display: flex;
+    /* Stacks flex items vertically */
     flex-direction: column;
+    /* Aligns the navigation bar to the center of its container */
     align-self: center;
+    /* No padding for the nav */
     padding: 0;
   }
 
+  /* Styles for each navigation item */
   .nav_item {
+    /* No margin for navigation items */
     margin: 0;
+    /* Slight padding for touch targets */
     padding: 0.25rem 0.25rem;
+    /* Removes list bullet styles */
     list-style-type: none;
+    /* Uses flexbox for layout */
     display: flex;
+    /* Uses flexbox for layout */
     align-items: center;
+    /* Centers items horizontally within the nav */
     justify-content: center;
+    /* Sets text color for navigation items */
     color: #0000FF;
   }
   
+  /* Styles for navigation links */
   .nav_item a {
+    /* Adds padding around the links for spacing */
     padding: 0.25rem;
+    /* Sets link color */
     color: #0000FF;
   }
 
+  /* Styles for navigation links on hover or focus */
   .nav_item a:hover, a:focus{
+    /* Default link color for hover state */
     color: -webkit-link;
+    /* Sets link color for hover state explicitly */
     color: #0000FF;
   }
 
+  /* Keyframe animation for the logo to grow and appear on page load */
   @keyframes logo-grow {
     from {
+      /* Starts with a small width */
       width: 25px;
+      /* Starts invisible */
       opacity: 0;
     }
     to {
+      /* Ends with the full width */
       width: 475px;
+      /* Ends fully visible */
       opacity: 1;
     }
   }
   
+  /* Applies the logo-grow animation to the h1 element */
   h1 {
+    /* Runs the animation over 5 seconds once */
     animation: logo-animation 5s forwards;
   }
 
+  /* Styles for the pricing section */
   .pricing {
+    /* Uses flexbox for layout */
     display: flex;
+    /* Stacks items vertically */
     flex-direction: column;
+    /* Centers items vertically */
     justify-content: center;
+    /* Centers items horizontally */
     align-items: center;
+    /* Allows items to wrap onto multiple lines if needed */
     flex-wrap: wrap;
+    /* Centers the pricing section within its container */
     margin: 0 auto;
-    max-width: 1200px;;
+    /* Maximum width for the pricing section */
+    max-width: 1200px;
   }
   
+  /* Styles for individual pricing cards */
   .card {
+    /* Adds margin around cards for spacing */
     margin: 1rem;
+    /* Card background color */
     background: #fff;
+    /* Rounded corners at the top of the card */
     border-radius: 50px 50px 0 0;
+    /* Padding inside the card, with extra padding at the bottom */
     padding: 0 0 1rem 0;
+    /* Uses flexbox for layout */
     display: flex;
+    /* Stacks card content vertically */
     flex-direction: column;
+    /* Centers card content horizontally */
     align-items: center;
+    /* Hides any content that overflows the card's boundaries */
     overflow: hidden;
+    /* Flex basis of 450px with no growth and shrink allowed */
     flex: 0 1 450px;
   }
 
+  /* Styles for the card headers */
   .card h3 {
+    /* Background color for the header */
     background: #288088;
+    /* Rounded corners at the top to match the card */
     border-radius: 50px 50px 0 0;
+    /* Large padding for visual effect */
     padding: 1.5rem 32rem 1.5rem 32rem;
+    /* Header takes up full width of the card */
     width: 100%;
+    /* Includes padding in the width */
     box-sizing: border-box;
+    /* Centers the text */
     text-align: center;
+    /* No margin */
     margin: 0;
   }
   
+  /* Styles for the card buttons */
   .card button {
     background: #288088;
     color: white;
+    /* Padding around the text within the button */
     padding: 1rem 2rem;
+    /* Standard font size for the button text */
     font-size: 1rem;
+    /* Cursor changes to pointer to indicate it's clickable */
     cursor: pointer;
+    /* No margin to align button properly within the card */
     margin: 0;
   }
 
+  /* Styles for the unordered list within each card */
   .card > ul {
+    /* The list occupies the full width of the card */
     width: 100%;
+    /* No margin to align list properly within the card */
     margin: 0;
   }
 
+  /* Styles for the gallery container */
   .gallery {
+    /* Utilize flexbox layout for the gallery */
     display: flex;
+    /* Allows items to wrap to next line */
     flex-wrap: wrap;
+    /* Space items evenly */
     justify-content: space-around;
   }
   
+  /* Styles for each image within the gallery */
   .gallery img {
+    /* Thick teal border around each image */
     border: 10px solid #50C7C7;
+    /* Space between images */
     margin: 10px;
+    /* Fixed width for each image */
     width: 300px;
   }
   
+  /* Media query for screens wider than 900px */
     @media (min-width: 900px) {
+      /* Styles for the header */
         header{
+          /* Align header items in a row */
             flex-direction: row;
+            /* Space between the logo and navigation */
             justify-content: space-between;
+            /* Header sticks to the top when scrolling */
             position: sticky;
+            /* Position at the top of the viewport */
             top: 0;
+            /* Ensures header is above other content */
             z-index: 10;
         }
-
+        /* Styles for navigation container */
         .nav {
+           /* Utilize flexbox layout for navigation */
             display: flex;
+            /* Align navigation items to the end */
             justify-content: flex-end;
         }
 
+         /* Styles for navigation items */
         .nav_item {
+          /* Align nav items in a row */
             flex-direction: row;
+             /* No bullet points for nav items */
             list-style: none;
+            /* No padding for nav items */
             padding: 0;
+            /* No margin for nav items */
             margin: 0;
+            /* Display nav items inline */
             display: inline;
         }
 
+        /* Styles for the pricing section */
         .pricing {
+          /* Align pricing cards in a row */
             flex-direction: row;
+            /* Center the cards */
             justify-content: center;
+            /* Align items to the top */
             align-items: flex-start;
         }
 
+        /* Styles for individual pricing cards */
         .card {
+          /* Center each card */
             margin: auto;
+            /* Width of each card */
             flex: 0 1 275px;
+            /* Height is determined by content */
             height: auto;
         }
 
+        /* Styles for card headers */
         .card h3{
+          /* Adjust padding to align text, might need adjustment */
             padding-right: 40rem;
         }
 
+        /* Adjusts gallery layout */
         .gallery {
+          /* Center images in the gallery */
             justify-content: center;
         }
 
+        /* Adjusts the width of each image in the gallery */
         .gallery img {
+           /* Calculate width minus margin */
             width: calc(33.333% - 2rem); 
     }    
 }
 
+/* Media query for reduced motion preference */
     @media (prefers-reduced-motion: reduce) {
         h1 {
+          /* Disable animation if user prefers reduced motion */
           animation: none;
         }
     }
 
+/* Media query for print */
 @media print{
+  /* Reset styles for printing */
     body{
+      /* Use sans-serif fonts for printing */
         font-family: Arial, Helvetica, sans-serif;
+        /* No background images */
         background-image: none;
+        /* Light grey background color */
         background-color: #f1f1f1;
-    }
-
-    nav, .nav_item {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        /* Black text color for printing */
+        color: #000000;
+        /* No margin */
+        margin: 0;
+        /* No padding */
         padding: 0;
-        margin-bottom: 1em;
     }
-
-    .pricing {
-        display: flex;
-        justify-content: space-around;
-        align-items: flex-end;
-    }
-
-    .card {
-        align-items: baseline;
-        flex: 0 1 275px;
-        height: auto;
-    }
-    
-    .gallery {
+    /* Hide unnecessary elements for printing */
+    .skip, .gallery, h2 {
         display: none;
     }
 
+     /* Adjust header layout for printing */
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Headers are not fixed in print */
+        position: static;
+        margin-bottom: 1em;
+    }
 
-    .card::before{
-        content: "\1F44D";
+    /* Adjust navigation item layout for printing */
+    .nav_item {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0;
+        margin-bottom: 1em;
+        /* Remove list styles for printing */
+        list-style: none;
+    }
+
+    /* Adjust nav item link margins for printing */
+    .nav_item a{
+        margin-right: 0.5em;
+    }
+
+    /* Styles for the pricing section layout */
+    .pricing {
+      /* Use flexbox for layout */
+        display: flex;
+        /* Arrange items in a row */
+        flex-direction: row;
+        /* Align items based on the baseline of the text within */
+        align-items: baseline;
+    }
+
+    /* Styles for individual pricing cards */
+    .card {
+      /* Blue border around cards */
+        border: 2px solid #45ADDD;
+        /* Vertical margin for spacing between cards */
+        margin: 0.5em 0;
+        /* The card's size is based on its content */
+        flex-basis: auto;
+        /* Prevents card from being split during printing */
+        page-break-inside: avoid;
+        /* Card can shrink to 275px but not grow */
+        flex: 0 1 275px;
+    }
+
+    /* Styles for the header inside each card */
+    .card h3{
+      /* Teal background for the header */
+        background-color: #288088;
+        /* White text color */
+        color: #ffffff;
+        /* Padding inside the header */
+        padding: 10px;
+        /* Rounded top-left corner */
+        border-top-left-radius: 10px;
+        /* Rounded top-right corner */
+        border-top-right-radius: 10px;
+    }
+
+    /* Styles for the list inside each card */
+    .card ul {
+      /* Removes padding to align list items with card edges */
+        padding: 0;
+    }
+
+    /* Styles for the button inside each card */
+    .card button {
+      /* The button is a block-level element */
         display: block;
-        font-size: 2em;
+        /* Horizontally centers the button within the card */
+        margin: 0 auto;
+        /* Padding inside the button */
+        padding: 0.5em;
+        /* Light teal background for the button */
+        background-color: #50c7c7;
+        /* White text color */
+        color: #ffffff;
+        /* Slight rounding of button corners */
+        border-radius: 5px;
+    }
+
+/* Styles for the thumbs up icon before card content */
+    .card::before{
+      /* Unicode character for thumbs up */
+        content: "\1F44D";
+        /* Thumbs up icon is a block-level element */
+        display: block;
+        /* Larger font size for the icon */
+        font-size: 24px;
+        /* Space below the icon before the content starts */
         margin-bottom: 0.5em;
     }
 
-    body > header {
-        position: fixed;
-        top: 0;
-        width: 100%;
+    /* Styles for the footer */
+    footer {
+      /* Footer is in the normal flow of the document */
+        position: static;
+        /* Black background for the footer */
+        background-color: #000;
+        /* White text color */
+        color: #ffffff;
+        /* Insert a page break before the footer when printing */
+        page-break-before: always;
     }
 }
